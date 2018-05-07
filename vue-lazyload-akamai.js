@@ -48,7 +48,6 @@ const plugin = {
 
     Vue.directive('lazyimg', {
       bind (el) {
-        console.log('binding: ', el)
         // basic flow: read from data-src attribute than move to src attr
         if ('IntersectionObserver' in window) {
           _initObserver(el)
