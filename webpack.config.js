@@ -16,7 +16,6 @@ const buildingForLocal = () => {
 
 const setPublicPath = () => {
   let env = NODE_ENV;
-  console.log();
   if (env === 'production') {
     return '/vue-lazyload-akamai/';
   } else {
