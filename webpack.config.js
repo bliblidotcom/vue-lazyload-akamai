@@ -25,7 +25,7 @@ const setPublicPath = () => {
 
 const extractHTML = new HtmlWebpackPlugin({
   title: 'History Search',
-  filename: 'index.html',
+  // filename: 'index.html',
   inject: true,
   template: setPath('/demo/index.ejs'),
   minify: {

@@ -11,7 +11,7 @@
     "publish-demo": "node ./publish-demo.js",
     "start": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --open",
     "dev": "npm run start",
-    "dist": "npm run build-lib && npm run build-demo && publish-demo"
+    "dist": "npm run build-lib && npm run build-demo && npm run publish-demo"
   },
   "main": "dist/vue-lazyload-akamai.min.js",
   "files": [
