@@ -28,7 +28,7 @@ import VueLazyloadAkamai from 'vue-lazyload-akamai'
 Vue.use(VueLazyloadAkamai, {optionalConfigs})
 ```
 
-Available configs explanations:
+✅ Available configs explanations:
 
 | Config Name    | Type     | Description             |
 | ---------------|----------|-------------------------|
@@ -45,7 +45,7 @@ Available configs explanations:
     data-err="{fallback image}">
 ```
 
-Attribute explanations:
+✅ Attribute explanations:
 
 | Attribute Name | Description        |
 | ---------------|--------------------|
@@ -60,7 +60,7 @@ Attribute explanations:
 
 https://github.com/w3c/IntersectionObserver/tree/master/polyfill
 
-## Development
+## ▶️ Development
 
 ```js
 // For development
