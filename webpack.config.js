@@ -1,7 +1,9 @@
 const path = require('path');
 const fs = require('fs');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+
 const NODE_ENV = process.env.NODE_ENV;
 
 const setPath = function(folderName) {
@@ -35,7 +37,8 @@ const extractHTML = new HtmlWebpackPlugin({
     removeComments: true,
     removeEmptyAttributes: true
   },
-  environment: process.env.NODE_ENV
+  environment: process.env.NODE_ENV,
+  imgPath: (!buildingForLocal()) ? 'assets' : 'demo/assets'
 });
 
 
@@ -69,7 +72,13 @@ const config = {
         isStaging: (NODE_ENV === 'development' || NODE_ENV === 'staging'),
         NODE_ENV: '"'+NODE_ENV+'"'
       }
-    })
+    }),
+    new CopyWebpackPlugin([
+      {
+        from: path.join(setPath('assets')),
+        to: path.join(setPath('dist-demo'), 'assets')
+      }
+    ])
   ],
   module: {
     rules: [
@@ -90,6 +99,6 @@ const config = {
         }]
       }
     ]
-  },
+  }
 };
 module.exports = config;

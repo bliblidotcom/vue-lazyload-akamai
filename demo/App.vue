@@ -19,7 +19,7 @@
 
       <div class="modal" v-if="modalShow" @click="hideModal">
         <img
-            lazyimg
+            v-lazyimg
             class="lazy"
             src="assets/placeholder.png"
             :data-src="'https://picsum.photos/350/350/?image=' + indexShow"
@@ -27,16 +27,16 @@
       </div>
 
       <img
+          v-lazyimg
           v-for="img in images"
           :key="'lazy1-'+ img"
-          lazyimg
           class="lazy"
           src="assets/placeholder.png"
           :data-src="'https://picsum.photos/350/350/?image=' + img"
           data-err="assets/broken-image.jpg">
 
       <img
-          lazyimg
+          v-lazyimg
           class="lazy"
           src="assets/placeholder.png"
           data-src="assets/logo-404.png"
@@ -44,7 +44,7 @@
 
 
       <img
-          lazyimg
+          v-lazyimg
           class="lazy"
           src="assets/placeholder.png"
           data-src="assets/logo-404.png"
@@ -52,9 +52,9 @@
 
 
       <img
+          v-lazyimg
           v-for="img in images"
           :key="'lazy2-'+ img"
-          lazyimg
           class="lazy"
           src="assets/placeholder.png"
           :data-src="'https://picsum.photos/350/350/?image=' + (img+21)"

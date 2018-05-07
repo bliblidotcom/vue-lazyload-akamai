@@ -6,10 +6,10 @@
   "author": "Blibli.com Tech Team (https://github.com/bliblidotcom)",
   "private": false,
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack-dev-server --inline --hot",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --open",
     "build-demo": "rm -rf dist-demo && cross-env NODE_ENV=production webpack --mode production",
     "build-lib": "node_modules/.bin/rollup -c",
-    "publish-demo": "node ./gh-publish.js"
+    "publish-demo": "node ./publish-demo.js"
   },
   "main": "index.js",
   "files": [],
@@ -37,6 +37,7 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "css-loader": "0.28.11",
     "cross-env": "^5.1.4",
+    "copy-webpack-plugin": "4.5.1",
     "eslint": "^4.19.1",
     "eslint-plugin-vue": "4.5.0",
     "file-loader": "^1.1.11",
