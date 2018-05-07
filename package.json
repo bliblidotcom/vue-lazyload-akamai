@@ -24,13 +24,14 @@
     "url": "https://github.com/bliblidotcom/vue-lazyload-akamai/issues"
   },
   "keywords": [
-    "vue select image",
-    "vue image select",
-    "vue image picker",
-    "vue2 image picker",
-    "vue2 image select"
+    "lazyload image",
+    "vue lazyload image",
+    "vue lazyload akamai",
+    "image converter",
+    "akamai image converter"
   ],
   "dependencies": {
+    "akamai-image-converter": "^0.0.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

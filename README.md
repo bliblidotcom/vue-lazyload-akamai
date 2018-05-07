@@ -18,14 +18,22 @@ yarn add vue-lazyload-akamai
 
 ## 🚀 Usage Guide
 
-Add plugins in `main.js`
+**Add plugins in `main.js`**
 
 ```js
 import VueLazyloadAkamai from 'vue-lazyload-akamai'
-Vue.use(VueLazyloadAkamai)
+Vue.use(VueLazyloadAkamai, {optionalConfigs})
 ```
 
-Using in your Vue components:
+Available configs explanations:
+
+| Config Name    | Type     | Description             |
+| ---------------|----------|-------------------------|
+| `useWebp`      | Boolean  | Using webp when support |
+| `quality`      | Number   | Quality of image (using scala from 10-100) |
+| `width` & `height`       | Number  | Width and Height of image in pixel unit |
+
+**Using in your Vue components:**
 
 ```html
 <img v-lazyimg
@@ -41,7 +49,13 @@ Attribute explanations:
 | `src`          | Use as placeholder/loading image before original image was loaded. |
 | `data-src`     | Original image that we want to load after user scroll to it's sections |
 | `data-err`     | Image as fallback when original image failed to load (404 response) |
+| `data-quality` | Quality of image (using scala from 10-100)  |
+| `data-width`   | Width of image in pixel unit  |
+| `data-height`  | Height of image in pixel unit  |
 
+## 🗿 Polyfill
+
+https://github.com/w3c/IntersectionObserver/tree/master/polyfill
 
 
 Copyright © 2018 by [Blibli.com Tech Team](https://github.com/bliblidotcom) - Released Under MIT License
