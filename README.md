@@ -34,8 +34,10 @@ Vue.use(VueLazyloadAkamai, {optionalConfigs})
 | ------------------|----------|-------------------------|
 | `useWebp`         | Boolean  | Using webp when support |
 | `quality`         | Number   | Quality of image (using scala from 10-100) |
-| `width` & `height`| Number   | Width and Height of image in pixel unit |
+| `width` & `height`| Number   | Width and Height of image (in pixel unit) |
 | `fallback`        | String   | Global fallback image if attr `data-err` not setted |
+| `placeholder`     | String   | Global placeholder image if attr `src` not setted |
+| `timeout`         | Number   | Timeout before image replaced (in millisecond unit) |
 
 **Using in your Vue components:**
 

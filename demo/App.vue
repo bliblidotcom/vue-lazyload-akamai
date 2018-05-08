@@ -20,45 +20,37 @@
       <div class="modal" v-if="modalShow" @click="hideModal">
         <img
             v-lazyimg
-            class="lazy"
-            src="assets/placeholder.png"
-            :data-src="'https://picsum.photos/350/350/?image=' + indexShow"
-            data-err="assets/broken-image.jpg">
+            class="lazy 0"
+            :data-src="'https://picsum.photos/350/350/?image=' + indexShow"/>
       </div>
 
       <img
           v-lazyimg
           v-for="img in images"
           :key="'lazy1-'+ img"
-          class="lazy"
-          src="assets/placeholder.png"
+          class="lazy 1"
           :data-src="'https://picsum.photos/350/350/?image=' + img"
-          data-err="assets/broken-image.jpg">
+          data-quality="40"
+          data-width="350"
+          data-height="350"/>
 
       <img
           v-lazyimg
-          class="lazy"
-          src="assets/placeholder.png"
-          data-src="assets/logo-404.png"
-          data-err="assets/broken-image.jpg">
-
+          class="lazy 2"
+          data-src="assets/logo-404.png"/>
 
       <img
           v-lazyimg
-          class="lazy"
-          src="assets/placeholder.png"
+          class="lazy 3"
           data-src="assets/logo-404.png"
-          data-err="assets/broken-image.jpg">
-
+          data-err="assets/broken-image.jpg"/>
 
       <img
           v-lazyimg
           v-for="img in images"
           :key="'lazy2-'+ img"
-          class="lazy"
-          src="assets/placeholder.png"
-          :data-src="'https://picsum.photos/350/350/?image=' + (img+21)"
-          data-err="assets/broken-image.jpg">
+          class="lazy 4"
+          :data-src="'https://picsum.photos/350/350/?image=' + (img+21)">
 
     </main>
 

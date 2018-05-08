@@ -8,7 +8,10 @@ import 'babel-core/register'
 require('intersection-observer')
 // use plugin
 Vue.use(plugin, {
-  useWebp: true
+  useWebp: true,
+  placeholder: 'assets/placeholder.png',
+  fallback: 'assets/broken-image.jpg',
+  timeout: 1000
 });
 
 new Vue({

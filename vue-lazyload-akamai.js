@@ -16,6 +16,7 @@ const plugin = {
   */
   install: (Vue, options = {}) => {
     const isSupportWebp = (document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') == 0)
+    const DEFAULT_TIMEOUT = 300
 
     const _swapImage = (targetEl, params) => {
       // data original
@@ -48,7 +49,11 @@ const plugin = {
       // when success
       newImage.onload = () => {
         if (dataSrc) {
-          targetEl.src = dataSrc
+          let timeout = params.timeout || DEFAULT_TIMEOUT
+          // swap image here
+          setTimeout(() => {
+            targetEl.src = dataSrc
+          }, timeout)
         }
       }
 
@@ -83,6 +88,11 @@ const plugin = {
     // create vue directive for easier use in components
     Vue.directive('lazyimg', {
       bind (el) {
+        // using global place holder if exist
+        if (options.placeholder){
+          el.src = options.placeholder
+        }
+
         // basic flow: read from data-src attribute than move to src attr
         if ('IntersectionObserver' in window) {
           _initObserver(el, options)
