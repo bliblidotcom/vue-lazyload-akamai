@@ -1,7 +1,7 @@
 {
   "name": "vue-lazyload-akamai",
   "description": "Vue.js lazy load image directive with akamai image converter",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "MIT",
   "author": "Blibli.com Tech Team (https://github.com/bliblidotcom)",
   "private": false,
