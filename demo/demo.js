@@ -10,8 +10,7 @@ require('intersection-observer')
 Vue.use(plugin, {
   useWebp: true,
   placeholder: 'assets/placeholder.png',
-  fallback: 'assets/broken-image.jpg',
-  timeout: 1000
+  fallback: 'assets/broken-image.jpg'
 });
 
 new Vue({
