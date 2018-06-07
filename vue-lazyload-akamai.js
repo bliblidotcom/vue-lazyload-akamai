@@ -21,25 +21,28 @@ const plugin = {
     const _swapImage = (targetEl, params) => {
       // data original
       let dataSrc = targetEl.dataset.src
+      let isBase64URL = dataSrc.indexOf('data:image') >= 0
 
-      // put akamai image coverter here
-      if (params.useWebp && isSupportWebp) {
-        dataSrc = imageConverter._withOutputFormat(dataSrc, 'webp')
-      }
+      if (!isBase64URL) {
+        // put akamai image coverter here
+        if (params.useWebp && isSupportWebp) {
+          dataSrc = imageConverter._withOutputFormat(dataSrc, 'webp')
+        }
 
-      let localQuality = targetEl.dataset.quality
-      if (localQuality) {
-        dataSrc = imageConverter._withQuality(dataSrc, localQuality)
-      } else if (params.quality) {
-        dataSrc = imageConverter._withQuality(dataSrc, params.quality)
-      }
+        let localQuality = targetEl.dataset.quality
+        if (localQuality) {
+          dataSrc = imageConverter._withQuality(dataSrc, localQuality)
+        } else if (params.quality) {
+          dataSrc = imageConverter._withQuality(dataSrc, params.quality)
+        }
 
-      let localWidth = targetEl.dataset.width
-      let localHeight = targetEl.dataset.height
-      if (localWidth && localHeight) {
-        dataSrc = imageConverter._withDimension(dataSrc, localWidth, localHeight)
-      } else if (params.width && param.height) {
-        dataSrc = imageConverter._withDimension(dataSrc, params.width, params.height)
+        let localWidth = targetEl.dataset.width
+        let localHeight = targetEl.dataset.height
+        if (localWidth && localHeight) {
+          dataSrc = imageConverter._withDimension(dataSrc, localWidth, localHeight)
+        } else if (params.width && param.height) {
+          dataSrc = imageConverter._withDimension(dataSrc, params.width, params.height)
+        }
       }
 
       // async load image
@@ -87,9 +90,9 @@ const plugin = {
 
     // create vue directive for easier use in components
     Vue.directive('lazyimg', {
-      bind (el) {
+      bind(el) {
         // using global place holder if exist
-        if (options.placeholder){
+        if (options.placeholder) {
           el.src = options.placeholder
         }
 
@@ -101,7 +104,7 @@ const plugin = {
           _swapImage(el, options)
         }
       },
-      update (el) {
+      update(el) {
         // fired when you replace with value
       }
     })
